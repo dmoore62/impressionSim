@@ -25,7 +25,9 @@ public class CreateTable {
 			HTableDescriptor tblDesc = new HTableDescriptor(TableName.valueOf(tableName));
 			
 			for(int i = 0; i < columnFamilies.length; i ++){
-				tblDesc.addFamily(new HColumnDescriptor(columnFamilies[i]));
+				HColumnDescriptor col = new HColumnDescriptor(columnFamilies[i]);
+				col.setMaxVersions(100);
+				tblDesc.addFamily(col);
 			}
 			
 			admin.createTable(tblDesc);

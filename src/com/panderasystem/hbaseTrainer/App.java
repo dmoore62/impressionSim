@@ -10,7 +10,7 @@ public class App
     {
         System.out.println( "Hello World!" );
         CreateTable ct = new CreateTable();
-        String tableName = "impressions";
+        String tableName = "impressionsAgg";
         String[] columnFamilies = {"GeoDim", "CampaignDim", "DateDim", "AttrDim"};
         try{
         	ct.newTable(tableName, columnFamilies);
@@ -18,11 +18,11 @@ public class App
         	System.out.println(e.getMessage() + e.getCause());
         }
         
-        /*TablePopulator tp = new TablePopulator(tableName);
+        TablePopulator tp = new TablePopulator(tableName);
         try{
         	tp.simulateImpressionData();
         }catch(Exception e){
         	e.printStackTrace();
-        }*/
+        }
     }
 }

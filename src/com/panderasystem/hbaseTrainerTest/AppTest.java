@@ -1,4 +1,4 @@
-package com.panderasystem.hbaseTrainer;
+package com.panderasystem.hbaseTrainerTest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
